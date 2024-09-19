@@ -1,26 +1,20 @@
-package com.leucine.cda.entity;
+package com.leucine.cda.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "enrollment")
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     @ManyToOne
     @JoinColumn(name = "student_id")
-    private StudentProfile studentProfile;
-
+    private StudentProfile student;
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;

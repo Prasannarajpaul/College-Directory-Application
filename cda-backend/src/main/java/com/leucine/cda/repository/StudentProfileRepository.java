@@ -1,8 +1,8 @@
 package com.leucine.cda.repository;
 
-import com.leucine.cda.model.User;
+import com.leucine.cda.model.StudentProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface StudentProfileRepository extends JpaRepository<StudentProfile, Long> {
     // Additional query methods if needed
 }

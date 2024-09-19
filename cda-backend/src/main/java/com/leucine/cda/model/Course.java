@@ -1,15 +1,11 @@
-package com.leucine.cda.entity;
+package com.leucine.cda.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "course")
 public class Course {
@@ -18,15 +14,10 @@ public class Course {
     private long id;
     private String title;
     private String description;
-
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
-
     @ManyToOne
     @JoinColumn(name = "faculty_id")
-    private FacultyProfile facultyProfile;
-
-    @OneToMany(mappedBy = "course")
-    private List<Enrollment> enrollments;
+    private FacultyProfile faculty;
 }
