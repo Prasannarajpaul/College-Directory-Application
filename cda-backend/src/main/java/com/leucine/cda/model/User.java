@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,4 @@ public class User {
     private String email;
     private String phone;
 
-    public enum Role {
-        STUDENT, FACULTY_MEMBER, ADMINISTRATOR
-    }
 }
